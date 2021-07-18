@@ -68,7 +68,7 @@ The first three forms of database normalization are
 - Third Normal Form (3 NF)
 
 *Examples*
-###### 1NF conditions
+#### 1NF conditions
 - Different relation to different table
 - Each cell contains unique values , you can add data values without overwriting any present data.
 
@@ -104,7 +104,7 @@ The final table will look like below
 | 2    | Feeling Myself       |2       |1 |
 | 2    | Feeling Myself       |2       |2|
 
-###### 2NF conditions
+#### 2NF conditions
 A table is said to be in 2NF if both the following conditions hold:
 
 - Table is in 1NF (First normal form)
