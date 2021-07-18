@@ -133,6 +133,32 @@ After Normalization, we end up with the following
 |4       |12/02/1888      |
 
 
+####  3NF conditions
+A table is said to be in 3NF if both the following conditions hold:
+
+- A Table is already in 2 NF
+- Non-Primary key columns shouldn’t depend on the other non-Primary key columns
+- There is no transitive functional dependency
+
+ The Music_Id determines the Album_ID of an Artist, instead of the album_id that determines the album name. Therefore, the album name column is indirectly dependent on the Music column. So, it satisfies the transitive dependency. So this cannot be in third normal form.
+
+| Music_Id    | Music_Name | Genre  |Artist_Name |Album_Name |
+| ----------- | ----------- | ----------- |-----------  |-----------  |
+| 1     | Super Bass      |Rap      |1       | Pink Friday |
+| 2    | Barbie Dreams      |Rap      |1       | Queen|
+
+After Normalization
+
+| Music_Id    | Music_Name | Genre  |Artist_Name |Album_ID |
+| ----------- | ----------- | ----------- |-----------  |-----------  |
+| 1     | Super Bass      |Rap      |1       | 1 |
+| 2    | Barbie Dreams      |Rap      |1       | 2|
+
+
+| Album_ID     | Album_Name |
+| ----------- | ----------- |
+| 1      | Pink Friday     |
+| 2   | Queen        |
 
 
 #### DENORMALIZATION
@@ -147,4 +173,4 @@ After Normalization, we end up with the following
 - [Data Modelling](https://www.ibm.com/cloud/learn/data-modeling)
 - [OLTP vs OLAP](https://www.stitchdata.com/resources/oltp-vs-olap/)
 - [Normalization and Denormalization](https://www.tutorialspoint.com/difference-between-normalization-and-denormalization) 
-[INF,2NF,3NF] (https://beginnersbook.com/2015/05/normalization-in-dbms/)
+- [INF,2NF,3NF] (https://www.sqlshack.com/what-is-database-normalization-in-sql-server/)
