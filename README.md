@@ -68,7 +68,7 @@ The first three forms of database normalization are
 - Third Normal Form (3 NF)
 
 *Examples*
-1NF conditions
+###### 1NF conditions
 - Different relation to different table
 - Each cell contains unique values , you can add data values without overwriting any present data.
 
@@ -103,6 +103,36 @@ The final table will look like below
 | 2    | Halo       |3       |2     |
 | 2    | Feeling Myself       |2       |1 |
 | 2    | Feeling Myself       |2       |2|
+
+###### 2NF conditions
+A table is said to be in 2NF if both the following conditions hold:
+
+- Table is in 1NF (First normal form)
+- In the second normal form, all non-key attributes are fully functional dependent on the primary key
+
+An E-learning platform , the tables for content creators
+It is not in 2NF because non prime attribute creator date of birth is dependent on creator_id alone . This violates the rule for 2NF as the rule says all non-key attributes are fully functional dependent on the primary key
+
+| Content_Id    | Content_Name | Creator_ID  |Date_of_birth |
+| ----------- | ----------- | ----------- |-----------  |
+| 1     | Photography      |3      |12/12/1890       |
+| 2    | Visual Arts       |4       |12/02/1888      |
+
+
+After Normalization, we end up with the following
+
+| Content_Id    | Content_Name | Creator_ID  |
+| ----------- | ----------- | ----------- |
+| 1     | Photography      |3      |
+| 2    | Visual Arts       |4       |
+
+
+| Creator_ID  |Date_of_birth |
+| ----------- |-----------  |
+|3      |12/12/1890       |
+|4       |12/02/1888      |
+
+
 
 
 #### DENORMALIZATION
