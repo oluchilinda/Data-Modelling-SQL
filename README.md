@@ -113,4 +113,5 @@ The final table will look like below
 ### References
 - [Data Modelling](https://www.ibm.com/cloud/learn/data-modeling)
 - [OLTP vs OLAP](https://www.stitchdata.com/resources/oltp-vs-olap/)
-- [Normalization and Denormalization](https://www.tutorialspoint.com/difference-between-normalization-and-denormalization)
+- [Normalization and Denormalization](https://www.tutorialspoint.com/difference-between-normalization-and-denormalization) 
+- 
