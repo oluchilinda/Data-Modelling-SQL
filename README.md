@@ -52,7 +52,8 @@ The data from one or more OLTP databases is ingested into OLAP systems through a
 
 
 
-#### NORMALIZATION AND DENORMALIZATION
+### NORMALIZATION AND DENORMALIZATION
+#### NORMALIZATION
 Normalization is used to remove redundant data from the database and to store non-redundant and consistent data into it (data integrity)
 
 ##### Why Normalization
@@ -103,6 +104,8 @@ The final table will look like below
 | 2    | Feeling Myself       |2       |1 |
 | 2    | Feeling Myself       |2       |2|
 
+
+#### DENORMALIZATION
 ###### Why Denormalization
 - Denormalization is used to combine multiple table data into one so that it can be queried quickly.
 - Denormalization on the other hand focus on to achieve the faster execution of the queries through introducing redundancy.
