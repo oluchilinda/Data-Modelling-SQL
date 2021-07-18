@@ -173,4 +173,4 @@ After Normalization
 - [Data Modelling](https://www.ibm.com/cloud/learn/data-modeling)
 - [OLTP vs OLAP](https://www.stitchdata.com/resources/oltp-vs-olap/)
 - [Normalization and Denormalization](https://www.tutorialspoint.com/difference-between-normalization-and-denormalization) 
-- [INF,2NF,3NF] (https://www.sqlshack.com/what-is-database-normalization-in-sql-server/)
+- [INF,2NF,3NF](https://www.sqlshack.com/what-is-database-normalization-in-sql-server)
