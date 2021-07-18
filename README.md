@@ -10,9 +10,13 @@ Data modeling is the process of creating a visual representation of either a who
 - Ability to do aggregations and analytics
 - Secondary Indexes available : You have the advantage of being able to add another index to help with quick searching.
 - ACID Transactions: Allows you to meet a set of properties of database transactions intended to guarantee validity even in the event of errors, power failures, and thus maintain data integrity.
+
 A-Atomicity - The whole  query transaction is processed or nothing is processed.
+
 C-Consistency - e.g. If a column is defined as boolean, a string or numerical table cannot be committed into the column, it would raise an SQL IntegrityError.
+
 I-Isolation - e.g multiple query transactions can occur without interfering with any other.
+
 D-Durability - e.g  DB sessions that has been committed will remain, even in case of power failure
 
 
@@ -45,3 +49,68 @@ OLTP is based on the following
     - Data periodically refreshed with scheduled, long-running batch jobs
 
 The data from one or more OLTP databases is ingested into OLAP systems through a process called extract, transform, load (ETL).
+
+
+
+#### NORMALIZATION AND DENORMALIZATION
+Normalization is used to remove redundant data from the database and to store non-redundant and consistent data into it (data integrity)
+
+##### Why Normalization
+- Normalization maintains data integrity i.e. any addition or deletion of data from the table will not create any mismatch in the relationship of the tables.
+- 	Normalization is generally used where number of insert/update/delete operations are performed and joins of those tables are not expensive.
+
+### Types of Normalization
+The first three forms of database normalization are
+
+- First Normal Form (1 NF)
+- Second Normal Form (2 NF)
+- Third Normal Form (3 NF)
+
+*Examples*
+1NF conditions
+- Different relation to different table
+- Each cell contains unique values , you can add data values without overwriting any present data.
+
+Look at this table, you see the music table has more than one value in music genre and artist_name
+and it disobeys 1NF 
+| Music_Id    | Music_Name | Genre  |Artist_Name |
+| ----------- | ----------- | ----------- |-----------  |
+| 1     | Super Bass      |Rap,Pop       |Nicki Minaj       |
+| 2    | Halo       |R & B        |Beyonce      |
+| 2    | Feeling Myself       |Rap       |Nicki Minaj,Beyonce |
+
+Let us Normalize it now.
+The final table will look like below
+
+| Genre_ID      | Genre_Name |           
+| ----------- | ----------- |
+| 1      | Pop       |
+| 2   |  Rap        |
+| 3   |  R & B       |
+
+
+| Artist_ID     | Artist_Name |
+| ----------- | ----------- |
+| 1      | Nicki Minaj       |
+| 2   | Beyonce        |
+
+
+| Music_Id    | Music_Name | Genre_ID  |Artist_ID |
+| ----------- | ----------- | ----------- |-----------  |
+| 1     | Super Bass      |1       |1       |
+| 1     | Super Bass      |2       |1       |
+| 2    | Halo       |3       |2     |
+| 2    | Feeling Myself       |2       |1 |
+| 2    | Feeling Myself       |2       |2|
+
+###### Why Denormalization
+- Denormalization is used to combine multiple table data into one so that it can be queried quickly.
+- Denormalization on the other hand focus on to achieve the faster execution of the queries through introducing redundancy.
+- Denormalization is used where joins are expensive and frequent query is executed on the tables.
+- Denormalization does not maintain any data integrity.
+
+
+### References
+- [Data Modelling](https://www.ibm.com/cloud/learn/data-modeling).
+- [OLTP vs OLAP](https://www.stitchdata.com/resources/oltp-vs-olap/)
+- [Normalization and Denormalization](https://www.tutorialspoint.com/difference-between-normalization-and-denormalization)
