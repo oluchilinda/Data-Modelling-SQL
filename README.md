@@ -142,17 +142,17 @@ A table is said to be in 3NF if both the following conditions hold:
 
  The Music_Id determines the Album_ID of an Artist, instead of the album_id that determines the album name. Therefore, the album name column is indirectly dependent on the Music column. So, it satisfies the transitive dependency. So this cannot be in third normal form.
 
-| Music_Id    | Music_Name | Genre  |Artist_Name |Album_Name |
+| Music_Id    | Music_Name | Genre_Id   |Artist_Name |Album_Name |
 | ----------- | ----------- | ----------- |-----------  |-----------  |
-| 1     | Super Bass      |Rap      |1       | Pink Friday |
-| 2    | Barbie Dreams      |Rap      |1       | Queen|
+| 1     | Super Bass      |1      |1       | Pink Friday |
+| 2    | Barbie Dreams      |1      |1       | Queen|
 
 After Normalization
 
-| Music_Id    | Music_Name | Genre  |Artist_Name |Album_ID |
+| Music_Id    | Music_Name | Genre_Id  |Artist_Name |Album_ID |
 | ----------- | ----------- | ----------- |-----------  |-----------  |
-| 1     | Super Bass      |Rap      |1       | 1 |
-| 2    | Barbie Dreams      |Rap      |1       | 2|
+| 1     | Super Bass      |1      |1       | 1 |
+| 2    | Barbie Dreams      |1     |1       | 2|
 
 
 | Album_ID     | Album_Name |
