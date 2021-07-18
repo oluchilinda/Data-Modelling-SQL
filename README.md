@@ -147,4 +147,4 @@ After Normalization, we end up with the following
 - [Data Modelling](https://www.ibm.com/cloud/learn/data-modeling)
 - [OLTP vs OLAP](https://www.stitchdata.com/resources/oltp-vs-olap/)
 - [Normalization and Denormalization](https://www.tutorialspoint.com/difference-between-normalization-and-denormalization) 
-- 
+[INF,2NF,3NF] (https://beginnersbook.com/2015/05/normalization-in-dbms/)
